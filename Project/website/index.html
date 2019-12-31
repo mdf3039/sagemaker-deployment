@@ -14,8 +14,9 @@
              var xhr = new XMLHttpRequest();
              xhr.onload = function() {
                  var result = parseFloat(xhr.responseText);
+                 console.log(result);
                  var resultElement = document.getElementById('result');
-                 if (result == 0) {
+                 if (result < 0.5) {
                      resultElement.className = 'bg-danger';
                      resultElement.innerHTML = 'Your review was NEGATIVE!';
                  } else {
@@ -37,7 +38,7 @@
             <h1>Is your review positive, or negative?</h1>
             <p>Enter your review below and click submit to find out...</p>
             <form method="POST"
-                  action="**REPLACE WITH PUBLIC API URL**"
+                  action="https://h00i8y47h3.execute-api.us-east-2.amazonaws.com/prod"
                   onsubmit="return submitForm(this);" >                     <!-- HERE IS WHERE YOU NEED TO ENTER THE API URL -->
                 <div class="form-group">
                     <label for="review">Review:</label>
